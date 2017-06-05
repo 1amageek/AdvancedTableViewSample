@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UWc-0c-LDz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="Oz5-5K-6Yt">
+            <objects>
+                <tableViewController id="5hz-vH-YSd" customClass="MasterViewController" customModule="AdvancedTableViewSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="153" sectionHeaderHeight="18" sectionFooterHeight="18" id="Qeo-8T-4mE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="153" id="gGt-Np-cRL" customClass="TableViewCell" customModule="AdvancedTableViewSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="153"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gGt-Np-cRL" id="R3z-VC-fYj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="152.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wIU-T4-DU5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="153"/>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="wIU-T4-DU5" secondAttribute="bottom" id="Mzk-eS-xlH"/>
+                                        <constraint firstItem="wIU-T4-DU5" firstAttribute="top" secondItem="R3z-VC-fYj" secondAttribute="top" id="Okn-AT-8sc"/>
+                                        <constraint firstItem="wIU-T4-DU5" firstAttribute="leading" secondItem="R3z-VC-fYj" secondAttribute="leading" id="PsE-Ug-wh9"/>
+                                        <constraint firstAttribute="trailing" secondItem="wIU-T4-DU5" secondAttribute="trailing" id="WWd-TL-hky"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="stackView" destination="wIU-T4-DU5" id="Eur-r1-zNh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5hz-vH-YSd" id="Gcd-0q-CJ6"/>
+                            <outlet property="delegate" destination="5hz-vH-YSd" id="R20-c0-qtn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="YWQ-v5-YPf">
+                        <barButtonItem key="leftBarButtonItem" title="Create User" id="Y8I-rp-48U">
+                            <connections>
+                                <action selector="createUser:" destination="5hz-vH-YSd" id="Wnq-Ty-fFu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Create Sample" id="fMl-OG-wqi">
+                            <connections>
+                                <action selector="createSample:" destination="5hz-vH-YSd" id="77j-x2-65N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y1Y-55-w2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168.80000000000001" y="64.31784107946028"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XlX-UW-V1i">
+            <objects>
+                <navigationController id="UWc-0c-LDz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ajj-6n-ygw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5hz-vH-YSd" kind="relationship" relationship="rootViewController" id="3ZH-Pe-XEb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BbR-G7-Yvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-785" y="65"/>
+        </scene>
+    </scenes>
+</document>
