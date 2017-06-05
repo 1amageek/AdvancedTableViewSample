@@ -110,8 +110,12 @@ class MasterViewController: UITableViewController {
             guard let feed: Feed = feed else {
                 return
             }
+
+            // Like count
             var likeCount: Int = feed.likeCount
             cell.actionView.likeCountLabel.text = String(likeCount)
+
+            // Post like count
             cell.actionView.actionBlock = {
                 likeCount += 1
                 cell.actionView.likeCountLabel.text = String(likeCount)
