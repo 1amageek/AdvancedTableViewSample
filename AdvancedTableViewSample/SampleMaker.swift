@@ -13,12 +13,12 @@ class SampleMaker {
     func start(block: @escaping (String?, Error?) -> Void) {
 
         let user: User = User()
-        user.name = "WWDC Extended Tokyo 2017"
+        user.name = "Otemachi Firebase #2"
         let image: UIImage = #imageLiteral(resourceName: "wwdc")
         let data: Data = UIImageJPEGRepresentation(image, 0.7)!
         let file: File = File(data: data)
         user.profileImage = file
-        user.bio = "『WWDC Extended』とは、Appleが行なっている技術者向けカンファレンス「WWDC」のメインセッション（Keynote）をライブビューイングするイベントです。今回は通常のライブビューイングに加えて、前年の発表内容の振り返りや今年の発表内容予想を行うLT大会、FaceTimeを繋いで現地で参加しているヤフーエンジニアの生の感想などを聞いたりする企画を予定しています。また会場では、無料でアルコール、ソフトドリンク、軽食を提供させていただく予定です。いち早く最先端のAppleテクノロジーを吸収しエンジニアとしての知見を深め、また参加者同士の企業間の垣根を越えるコミュニケーションの場を提供します。"
+        user.bio = "Firebaseの知見を共有しよう！"
 
         user.save { (ref, error) in
             if let error = error {
